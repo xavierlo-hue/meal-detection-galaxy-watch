@@ -1,0 +1,37 @@
+# Android Studio / Gradle
+.gradle/
+build/
+*/build/
+local.properties
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# APK / bundles
+*.apk
+*.aab
+*/release/
+
+# Clés de signature — NE JAMAIS PUBLIER
+*.jks
+*.keystore
+keystore.properties
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Données personnelles (capteurs) — retirer cette ligne pour publier le dataset
+dataset/
+
+# Sorties d'entraînement intermédiaires
+*.keras
+*.h5
+kotlin_cnn_constants.txt
+
+# Logs
+*.log

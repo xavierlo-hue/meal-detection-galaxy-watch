@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Lecture des capteurs corporels (gyroscope, accéléromètre) -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+
+    <!-- Foreground service obligatoire pour garder les capteurs actifs -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- Wake lock pour garder l'écran allumé pendant l'enregistrement -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="Detection Repas"
+        android:theme="@android:style/Theme.DeviceDefault">
+
+        <receiver
+            android:name=".MealScheduleReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.mealdetection.SCHEDULE_START" />
+                <action android:name="com.example.mealdetection.SCHEDULE_STOP" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".WearMainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".SensorStreamingService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+        <service
+            android:name=".MealDetectionService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+        <service
+            android:name=".WatchDataCollectionService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+    </application>
+
+
+
+
+
+</manifest>
