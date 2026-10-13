@@ -233,7 +233,7 @@ This is an **experimental personal tool**. It is **not a medical device** and ha
 
 ## 📄 License
 
-Personal project, shared for educational purposes. License to be decided (e.g. MIT).
+Personal project, shared for educational purposes.  MIT
 
 ## 👤 Author
 
