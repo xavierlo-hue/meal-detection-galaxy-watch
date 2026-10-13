@@ -124,7 +124,7 @@ MealDetection/
 ## 🧪 Training pipeline
 
 ### 1. Data collection
-1. Open the app, then **tap the title 5 times** to show the collection section.
+1. Open the app on the watch, then **tap the title 5 times** to show the collection section.
 2. Pick a label (`repas_fourchette`, `repas_sandwich`, `boire_verre`, `autre_clavier`, `autre_repos`…) and start recording. Labels use French prefixes: `repas` = meal, `boire` = drink, `autre` = other.
 3. Files are written to `watch_recordings/` as `label.timestamp.csv`:
    ```
@@ -137,7 +137,7 @@ MealDetection/
 
 > 💡 **Long sessions** are essential to reduce false positives: a full 20–30 min meal, computer work, resting, housework…
 
-### 2. Training
+### 2. Model training 
 ```bash
 cd scripts
 pip install numpy pandas tensorflow scikit-learn
