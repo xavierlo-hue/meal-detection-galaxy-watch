@@ -32,7 +32,7 @@ When you live with insulin-treated diabetes, **forgetting your mealtime bolus** 
 | Sampling rate | ~50 Hz (`SENSOR_DELAY_GAME`) |
 | Phone | Not required (tested with an iPhone) |
 
-> ⚠️ **Important**: the model was trained with the watch worn on the **right wrist**, the one that makes the gesture toward the mouth (fork, spoon, sandwich, glass…). If the watch is worn on the left wrist, the axes are mirrored and the model **will not detect meals correctly**. You would then need to collect new data and retrain the model.
+> ⚠️ **Important**: the model was trained with the watch worn on the **right wrist**, the one that makes the gesture toward the mouth (fork, spoon, sandwich, glass…). In any case, you'll need to retrain the model so that it recognizes your mealtime gestures.
 
 ---
 
@@ -113,11 +113,9 @@ MealDetection/
 ├── scripts/                                # Python pipeline
 │   ├── train_cnn_lstm.py                   # CNN training + TFLite export
 │   ├── generate_kotlin_cnn.py              # Generates the Kotlin normalization constants
-│   └── clean_csv.py                        # CSV cleanup
-├── dataset/                                # Labeled CSVs (not versioned, see .gitignore)
-├── docs/
-│   ├── MealDetection_Guide_Maintenance.docx
-│   └── MealDetection_Annexe_Logcat.docx
+│   ├── clean_csv.py                        # CSV cleanup
+│   └── dataset/                            # Labeled CSVs (not versioned, see .gitignore)
+│
 └── README.md
 ```
 
@@ -126,7 +124,7 @@ MealDetection/
 ## 🧪 Training pipeline
 
 ### 1. Data collection
-1. Open the app, then **tap the title 5 times** to show the collection section.
+1. Open the app on the watch, then **tap the title 5 times** to show the collection section.
 2. Pick a label (`repas_fourchette`, `repas_sandwich`, `boire_verre`, `autre_clavier`, `autre_repos`…) and start recording. Labels use French prefixes: `repas` = meal, `boire` = drink, `autre` = other.
 3. Files are written to `watch_recordings/` as `label.timestamp.csv`:
    ```
@@ -139,7 +137,7 @@ MealDetection/
 
 > 💡 **Long sessions** are essential to reduce false positives: a full 20–30 min meal, computer work, resting, housework…
 
-### 2. Training
+### 2. Model training 
 ```bash
 cd scripts
 pip install numpy pandas tensorflow scikit-learn
@@ -235,7 +233,7 @@ This is an **experimental personal tool**. It is **not a medical device** and ha
 
 ## 📄 License
 
-Personal project, shared for educational purposes. License to be decided (e.g. MIT).
+Personal project, shared for educational purposes.  MIT
 
 ## 👤 Author
 
