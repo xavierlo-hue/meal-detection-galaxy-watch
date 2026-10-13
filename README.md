@@ -32,7 +32,7 @@ When you live with insulin-treated diabetes, **forgetting your mealtime bolus** 
 | Sampling rate | ~50 Hz (`SENSOR_DELAY_GAME`) |
 | Phone | Not required (tested with an iPhone) |
 
-> ⚠️ **Important**: the model was trained with the watch worn on the **right wrist**, the one that makes the gesture toward the mouth (fork, spoon, sandwich, glass…). If the watch is worn on the left wrist, the axes are mirrored and the model **will not detect meals correctly**. You would then need to collect new data and retrain the model.
+> ⚠️ **Important**: the model was trained with the watch worn on the **right wrist**, the one that makes the gesture toward the mouth (fork, spoon, sandwich, glass…). In any case, you'll need to retrain the model so that it recognizes your mealtime gestures.
 
 ---
 
