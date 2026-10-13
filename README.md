@@ -113,11 +113,9 @@ MealDetection/
 ├── scripts/                                # Python pipeline
 │   ├── train_cnn_lstm.py                   # CNN training + TFLite export
 │   ├── generate_kotlin_cnn.py              # Generates the Kotlin normalization constants
-│   └── clean_csv.py                        # CSV cleanup
-├── dataset/                                # Labeled CSVs (not versioned, see .gitignore)
-├── docs/
-│   ├── MealDetection_Guide_Maintenance.docx
-│   └── MealDetection_Annexe_Logcat.docx
+│   ├── clean_csv.py                        # CSV cleanup
+│   └── dataset/                            # Labeled CSVs (not versioned, see .gitignore)
+│
 └── README.md
 ```
 
